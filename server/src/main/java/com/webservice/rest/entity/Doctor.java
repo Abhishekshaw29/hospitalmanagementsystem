@@ -21,7 +21,7 @@ public class Doctor {
     private Integer age;
     private String gender;
     private String field;
-    private Integer patient_count;
+    private Integer patient_count=0;
 
     @OneToMany
     private List<Patient> patients;

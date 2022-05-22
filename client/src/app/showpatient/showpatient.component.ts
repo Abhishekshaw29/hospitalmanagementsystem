@@ -1,3 +1,4 @@
+import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPatient } from '../model/iPatient';
@@ -19,17 +20,22 @@ export class ShowpatientComponent implements OnInit {
     
   }
   showPatientInfo(){
-    if(this.id){
+    if(this.id == null){
+      alert("Please Enter Id");
+    }
+    else if(this.id){
       this.service.getPatient(this.id).subscribe({
         next : (data)=>{
           this.patient = data;
+          alert("patient retireved Succesfully");
         },
         error : (e)=>{
-          this.errorMessage = e + "Id Not present in database";
+          this.errorMessage = " Id not present in database";
+          alert(this.errorMessage);
         }
+
       });
     }
-    alert("No Patient found");
+    }
+  
   }
-
-}
