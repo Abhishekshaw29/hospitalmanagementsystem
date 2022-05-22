@@ -29,8 +29,9 @@ public class PatientController {
     }
 
     @PostMapping("patients/patient")
-    public void createPatient(@RequestBody Patient patient){
+    public boolean createPatient(@RequestBody Patient patient){
         service.savePatientInformation(patient);
+        return true;
     }
 
 }

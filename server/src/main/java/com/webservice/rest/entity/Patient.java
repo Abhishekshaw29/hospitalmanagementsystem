@@ -88,4 +88,15 @@ public class Patient {
         this.date_of_visit = date_of_visit;
     }
 
+    public Patient(Integer id, String name, Integer age, String doctor_name, LocalDate date_of_visit, String gender,
+            String prescription) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.doctor_name = doctor_name;
+        this.date_of_visit = date_of_visit;
+        this.gender = gender;
+        this.prescription = prescription;
+    }
+
 }

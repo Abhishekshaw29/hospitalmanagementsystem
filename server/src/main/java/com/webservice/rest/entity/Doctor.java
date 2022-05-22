@@ -37,8 +37,7 @@ public class Doctor {
     public Doctor() {
     }
 
-    public Doctor(Integer id, String name, Integer age, String gender, String field) {
-        this.id = id;
+    public Doctor(String name, Integer age, String gender, String field) {
         this.name = name;
         this.age = age;
         this.gender = gender;

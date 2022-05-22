@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.webservice.rest.entity.Doctor;
+import com.webservice.rest.repository.DoctorRepository;
 import com.webservice.rest.service.HospitalService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,9 @@ public class DoctorController {
     HospitalService service;
 
     @PostMapping("/doctors/doctor")
-    public void addUser(@RequestBody Doctor doctor) {
+    public boolean addUser(@RequestBody Doctor doctor) {
         service.saveDoctorInformation(doctor);
+		return true;
 
     }
 
@@ -45,6 +47,13 @@ public class DoctorController {
 
 		return mapping;
 	}
+
+	@GetMapping("doctors/doc/{name}")
+	public Doctor getDoctorInfo(@PathVariable String name) {
+		Doctor doctor = service.showDoctorInformation(name);
+		return doctor;
+	}
+
     @GetMapping("doctors")
 	public MappingJacksonValue getListOfDoctor() {
 		List<Doctor> doctors = service.getDoctors() ;

@@ -33,17 +33,19 @@ public class HospitalServiceImpl implements HospitalService {
     }
 
     @Override
-    public void saveDoctorInformation(Doctor doctor) {
+    public boolean saveDoctorInformation(Doctor doctor) {
         doctorRepository.save(doctor);
+        return true;
     }
 
     @Override
-    public void savePatientInformation(Patient patient) {
+    public boolean savePatientInformation(Patient patient) {
 
         Doctor doctor = doctorRepository.findByName(patient.getDoctor_name());
         doctor.addPatients(patient);
         patientRepository.save(patient);
         doctor.setPatient_count();
+        return true;
     }
 
     @Override
