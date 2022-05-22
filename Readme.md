@@ -16,7 +16,7 @@ project will be running in port = 8080
 
 run this project from main => RestApplication.java
 
-# ----------------------------------------------------------------------------
+# ------------------------------------------------------------------
 
 # client
 
