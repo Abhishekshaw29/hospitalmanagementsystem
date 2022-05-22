@@ -14,8 +14,9 @@ or add h2 dependency and remove above config
 
 project will be running in port = 8080
 
-# run this prooject from main => RestApplication.java
+run this project from main => RestApplication.java
 
+# ----------------------------------------------------------------------------------------------------
 
 # client
 
