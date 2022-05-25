@@ -42,7 +42,7 @@ public class RestApplicationTests
     @Test
     public void  showPatientInformationTest(){
         Patient patient =patientController.showPatientInformation(11);
-        assertEquals(patient.getName(),"Abhishek shaw");
+        assertEquals(patient.getName(),"patient");
     }
 
     @Test
